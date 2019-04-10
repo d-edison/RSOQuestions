@@ -1,12 +1,24 @@
 Package: RSOQuestions
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: View / Run the Code of Questions on the r Tag on StackOverflow
+Version: 1.0.0
 Authors@R: 
     person(given = "David",
            family = "Edison",
            role = c("aut", "cre"),
            email = "david.edison@hautelook.com")
-Description: What the package does (one paragraph).
+Description: This package provides a suite of functions for getting questions, 
+    viewing questions, and running the code of questions on the r tag on 
+    stackoverflow.com.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.0
+Imports: 
+    magrittr,
+    httr,
+    purrr,
+    rlang,
+    stringr
+Suggests: 
+    rstudioapi

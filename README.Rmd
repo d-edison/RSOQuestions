@@ -1,0 +1,59 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# RSOQuestions
+
+RSOQuestions is a way to easily view / run the code of questions on the `r` tag on stackoverflow.
+
+## Installation
+
+You can install RSOQuestions from GitHub with:
+
+``` r
+devtools::install_github("d-edison/RSOQuestions")
+```
+
+## Example
+
+You can grab a question from stackoverflow by using the `get_question` function:
+
+```{r}
+library(RSOQuestions)
+
+# only argument is ID, this ID corresponds to a popular question on the differences between <- and = for assignment
+q <- get_question(1741820) 
+```
+
+If no arguments are provided to `get_question`, the most recent question on the `r` tag will be used by default. RSOQuestion also provides a convenience function `get_recent_ids` to grab the 30 most recent IDs on the `r` tag:
+
+```{r}
+get_recent_ids()
+```
+
+To view the question in the RStudio Viewer pane, use `view_question`:
+
+```{r, eval = FALSE}
+view_question(q)
+```
+
+You run anything formatted as code with `run_code`. This function will run all expressions in the global environment and capture all results and error. By default the output with the calls and results errors is returned invisibly.
+
+```{r}
+#run all code in global environment
+res <- run_code(q) 
+
+#see results
+res
+```
