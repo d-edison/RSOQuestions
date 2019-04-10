@@ -22,3 +22,5 @@ Imports:
     stringr
 Suggests: 
     rstudioapi
+URL: https://github.com/d-edison/RSOQuestions
+BugReports: https://github.com/d-edison/RSOQuestions/issues
